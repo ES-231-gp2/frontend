@@ -1,0 +1,91 @@
+
+.App-header {
+    position: absolute;
+    display: flex;
+    
+    width: 393px;
+    height: 42px;
+    flex-shrink: 0;
+    
+    background: #FFF;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    
+    top: 4px;
+
+    z-index: 10;
+  }
+  
+  .App-header-logo {
+    position: absolute;
+  
+    width: 42px;
+    height: 25.126px;
+    flex-shrink: 0;
+  
+    left: 26px;
+    top: 7px;
+  }
+  
+  .App-header-title {
+    position: absolute;
+  
+    width: 41px;
+    height: 24px;
+    flex-shrink: 0;
+  
+    color: #000;
+    font-family: Montserrat;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 11px */
+    letter-spacing: -0.242px;
+  
+    top: 5px;
+    left: 69px;
+  }
+  
+  .App-header-entrar {
+    position: absolute;
+  
+    width: 79px;
+    height: 25px;
+    flex-shrink: 0;
+  
+    background-color: #FFF;
+    border-radius: 50px;
+    border: 2px solid #FFC107;
+    color: #FFC107;
+  
+    top: 8px;
+    left: 156px;
+  }
+  
+  .App-header-barraDePesquisa {
+    position: absolute;
+  
+    width: 100px;
+    height: 25px;
+    flex-shrink: 0;
+  
+    border-radius: 50px;
+    border-style: hidden;
+    background: #EDEEF0;
+  
+    padding: 1px, 0px, 1px, 0px;
+  
+    top: 7px;
+    left: 245px;
+  }
+  
+  .App-header-lupa {
+    position: absolute;
+  
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+  
+    top: 9px;
+    left: 347px;
+  }
+  
