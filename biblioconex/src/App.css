@@ -3,12 +3,9 @@
 }
 
 .App {
-  width: 393px;
-  height: 1805px;
-  border-radius: 15px;
+  width: 100%; 
+  height: 100%; 
   background: #FFF;
-
-  display: inline-block;
 }
 
 .App-link {
@@ -16,10 +13,13 @@
 }
 
 .Pages_Container {
-  background-color: #61dafb;
-
-  min-height: 500px;
-
   top: 20px;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .App {
+    max-width: 100%; 
+    width: auto;
+  }
 }

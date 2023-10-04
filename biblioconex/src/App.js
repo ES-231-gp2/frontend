@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import logo from './imagens/logo.svg';
-import logoCinza from './imagens/logo-cinza.svg'
 import lupa from './imagens/lupa.svg';
 import './App.css';
 import './App-header.css';
@@ -14,11 +13,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-header-logo" alt="logo"></img> 
-        <h1 className="App-header-title">Biblio Conex</h1>
-        <button className='App-header-entrar'>Entrar</button>
+        <img src={logo} className="App-header-logo" alt="logo"></img>
+        <div className='Header-inputs'>
+          <button className='App-header-entrar'>Entrar</button>
         <input placeholder='Pesquisar por...' className='App-header-barraDePesquisa'></input>
         <img src={lupa} className='App-header-lupa'/>
+        </div> 
+        
       </header>
 
       <div class="Pages_Container">
@@ -33,8 +34,7 @@ function App() {
       </div>
 
       <footer className="App-footer">
-        <img src={logoCinza} className="App-footer-logo" alt="logo"></img> 
-        <h1 className="App-footer-title">Biblio Conex</h1>
+        <img src={logo} className="App-footer-logo" alt="logo"></img> 
       </footer>
     </div>
   );
