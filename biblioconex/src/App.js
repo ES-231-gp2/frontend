@@ -9,14 +9,16 @@ import './App-footer.css'
 import Home from './containers/P1_Home/Home';
 import Login from './containers/P2_Login/Login'
 import Bibliotecario from './containers/Perfis/Bibliotecario';
+import Catalogo from './containers/Catalogo/Catalogo';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter> {/* Mova o BrowserRouter para envolver toda a aplicação */}
         <header className="App-header">
-          <img src={logo} className="App-header-logo" alt="logo">
-          </img>
+          <Link to="/"> {/* Adicione o Link aqui */}
+            <img src={logo} className="App-header-logo" alt="logo" />
+          </Link>
           <div className='Header-inputs'>
             <div className='App-header-entrar'>
               <Link to="/login" className='Custom-link-button'>
@@ -34,6 +36,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/perfil" element={<Bibliotecario />} />
+              <Route path="/catalogo" element={<Catalogo />} />
             </Route>
           </Routes>
         </div>
