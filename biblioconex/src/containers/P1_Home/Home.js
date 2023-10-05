@@ -1,5 +1,5 @@
 
-import Box from '../Box/Box';
+import Box from '../../components/Box/Box';
 import './Home.css';
 
 export default function() {

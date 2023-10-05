@@ -59,7 +59,18 @@ body {
   border-radius: 50px;
   border: 2px solid #FFC107;
   color: #FFC107;
+  text-decoration: none;
 }
+
+
+.Custom-link-button {
+  text-decoration: none; 
+  color: inherit; 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+}
+
 
 .App-header-barraDePesquisa {
   flex-shrink: 0;
