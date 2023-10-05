@@ -9,7 +9,7 @@ export default function () {
             <div className='Form-contents'>
                 <input placeholder='E-mail'></input>
                 <input placeholder='Senha'></input>
-                <div className='botao'>
+                <div className='botao-login'>
                     <Link to="/perfil" className='Custom-link-button'>
                         Entrar
                     </Link>
