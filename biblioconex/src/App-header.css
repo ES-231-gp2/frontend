@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin-bottom: 62px;
+}
+
+.App-header {
+  max-width: 1130px; /* Defina a largura máxima */
+  width: 100%; /* Largura de 100% para ocupar a largura total */
+  height: 42px;
+  background: #FFF;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  margin: 0px auto; /* Margem superior e inferior definida para 10px e margens esquerda/direita automáticas para centralizar */
+  border-radius: 8px;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.Header-inputs {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.App-header-logo {
+  width: 84px;
+  height: auto;
+  margin-left: 10px;
+}
+
+.App-header-title {
+  flex-grow: 1;
+  margin-left: 10px;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.242px;
+}
+
+.App-header-entrar {
+  width: auto;
+  padding: 5px 15px;
+  margin-right: 10px;
+  background-color: #FFF;
+  border-radius: 50px;
+  border: 2px solid #FFC107;
+  color: #FFC107;
+  text-decoration: none;
+}
+
+
+.Custom-link-button {
+  text-decoration: none; 
+  color: inherit; 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+}
+
+
+.App-header-barraDePesquisa {
+  flex-shrink: 0;
+  width: 40%;
+  height: 25px;
+  border-radius: 50px;
+  border-style: hidden;
+  background: #EDEEF0;
+  margin-right: 10px;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.App-header-lupa {
+  width: 21px;
+  height: 21px;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .App-header-title {
+    font-size: 10px;
+  }
+}

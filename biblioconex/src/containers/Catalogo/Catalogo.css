@@ -1,0 +1,123 @@
+.Catalogo-contents {
+    margin-top: 100px;
+    max-width: 1100px;
+    height: auto;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Categoria {
+    color: #4CAF50;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.38px;
+    margin-top: 30px;
+}
+
+.Contents-livros {
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #F8F8F8;
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.10);
+    display: flex;
+    flex-direction: column;
+}
+
+.Titulo {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.176px;
+    margin: 10px;
+}
+
+.Livro-img-sinopse {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.Livro {
+    width: 134px;
+    height: 196px;
+    flex-shrink: 0;
+    background: #9ca897;
+}
+
+.Sinopse {
+    margin-left: 10px;
+    flex-grow: 1;
+}
+
+h1 {
+    color: #050212;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.38px;
+    align-self: start;
+}
+
+.Botao-reserva {
+    width: 130px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #FF4081;
+    color: white;
+    margin: 10px 0px 0px 10px;
+    font-weight: bolder;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Botao-reserva:active {
+    background: white;
+    color: #FF4081;
+    border: 2px solid #FF4081;
+}
+
+.Linha-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 18px;
+}
+
+
+
+/* Estilos para telas menores, como smartphones */
+@media (max-width: 768px) {
+    .Catalogo-contents {
+        margin: 50px; /* Reduza a margem superior para economizar espaço */
+    }
+
+    .Contents-livros {
+        
+        max-width: 100%; /* Use toda a largura disponível em telas pequenas */
+    }
+    
+    .Sinopse {
+        margin-top: 0; /* Remova a margem acima da sinopse em telas pequenas */
+    }
+
+    .Botao-reserva {
+        margin-top: 20px; /* Aumente a margem acima do botão em telas pequenas */
+    }
+}
