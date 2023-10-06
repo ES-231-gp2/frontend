@@ -9,6 +9,7 @@ import './App-footer.css'
 import Home from './containers/P1_Home/Home';
 import Login from './containers/P2_Login/Login'
 import Bibliotecario from './containers/Perfis/Bibliotecario';
+import Aluno from './containers/Perfis/Aluno'
 import Catalogo from './containers/Catalogo/Catalogo';
 import Cadastro from './containers/Cadastro/Cadastro';
 
@@ -37,6 +38,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/perfil" element={<Bibliotecario />} />
+              <Route path="/perfilAluno" element={<Aluno />} />
               <Route path="/catalogo" element={<Catalogo />} />
               <Route path="/cadastro" element={<Cadastro />} />
             </Route>
