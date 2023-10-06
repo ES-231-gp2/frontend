@@ -10,6 +10,7 @@ import Home from './containers/P1_Home/Home';
 import Login from './containers/P2_Login/Login'
 import Bibliotecario from './containers/Perfis/Bibliotecario';
 import Catalogo from './containers/Catalogo/Catalogo';
+import Cadastro from './containers/Cadastro/Cadastro';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/perfil" element={<Bibliotecario />} />
               <Route path="/catalogo" element={<Catalogo />} />
+              <Route path="/cadastro" element={<Cadastro />} />
             </Route>
           </Routes>
         </div>

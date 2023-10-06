@@ -5,7 +5,7 @@ export default function () {
     return (
         
         <div className='Login-contents'>
-            <h1>ACESSO À BIBLIOTECA</h1>
+            <h1>ACESSO À <span className='biblioteca-amarelo'>BIBLIOTECA</span></h1>
             <div className='Form-contents'>
                 <input placeholder='E-mail'></input>
                 <input placeholder='Senha'></input>

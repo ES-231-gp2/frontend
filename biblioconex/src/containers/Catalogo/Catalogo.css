@@ -88,6 +88,8 @@ h1 {
 }
 
 .Botao-reserva:active {
+    width: 126px;
+    height: 32px;
     background: white;
     color: #FF4081;
     border: 2px solid #FF4081;
