@@ -12,6 +12,8 @@ import Bibliotecario from './containers/Perfis/Bibliotecario';
 import Aluno from './containers/Perfis/Aluno'
 import Catalogo from './containers/Catalogo/Catalogo';
 import Cadastro from './containers/Cadastro/Cadastro';
+import {Orientacao1, Orientacao2, Orientacao3} from './containers/P7_Orientacoes/Orientacoes'
+
 
 function App() {
   return (
@@ -41,6 +43,9 @@ function App() {
               <Route path="/perfilAluno" element={<Aluno />} />
               <Route path="/catalogo" element={<Catalogo />} />
               <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/Orientacao1" element={<Orientacao1 />} />
+              <Route path="/Orientacao2" element={<Orientacao2 />} />
+              <Route path="/Orientacao3" element={<Orientacao3 />} />
             </Route>
           </Routes>
         </div>
