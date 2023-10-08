@@ -13,7 +13,11 @@ function Bibliotecario() {
             <h2>Turma</h2>
             <div className='Contents-perfis'>
                 <div className='botao'>Cadastrar turma</div>
-                <div className='botao'>Alunos por turma</div>
+                <div className='botao'>
+                    <Link to="/alunos" className='Custom-link-button'>
+                        Alunos por turma
+                    </Link>
+                </div>
                 <div className='botao'>Alterar dados</div>
             </div>
 

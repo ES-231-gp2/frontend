@@ -1,0 +1,51 @@
+.Turma {
+    width: 60%;
+    margin: 50px auto;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #F8F8F8;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Nome-turma {
+    width: 25%;
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.176px;
+    flex-shrink: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Botao-excluir {
+    width: 30px;
+    height: 30px;
+    margin: 10px 30px 10px;
+    flex-shrink: 0;
+    border-radius: 100%;
+    background: #FF4081;
+    color: white;
+    font-weight: bolder;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Botao-excluir:active {
+    width: 26px;
+    height: 26px;
+    background: white;
+    color: #FF4081;
+    border: 2px solid #FF4081;
+}
