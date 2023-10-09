@@ -57,7 +57,7 @@ function Aluno() {
                 </div>
 
 
-            </div >
+            </div>
         </div>
     );
 }

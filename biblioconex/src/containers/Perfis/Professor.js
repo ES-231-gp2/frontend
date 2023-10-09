@@ -24,4 +24,4 @@ function Professor() {
     );
 }
 
-export default Aluno;
+export default Professor;
