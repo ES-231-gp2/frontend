@@ -4,7 +4,7 @@ function Orientacao1() {
     return (
         <div className='Orientacao-content'>
 
-            <h1>Saiba como reservar um livro ou entrar para a fila de espera</h1>
+            <h1>Saiba como <span className='detalhe-rosa'>reservar um livro</span> ou entrar para a <span className='detalhe-amarelo'>fila de espera</span></h1>
             <h4>Blog com instruções sobre como fazer a reserva do livro pelo site.</h4>
 
             <img src='/children-bookshell.png'></img>
