@@ -10,14 +10,37 @@
 }
 
 h1 {
-
+    color: #050212;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.38px;
+    align-self: start;
 }
 
-h4 {
+.Orientacao-text {
+    width: 75%;
+    color: #1E1E1E;
     font-family: Montserrat;
+    font-size: 16px;
     font-style: normal;
-    line-height: 100%; /* 21px */
+    font-weight: 400;
+    line-height: 150%; /* 21px */
     letter-spacing: -0.154px;
+    margin: 30px auto 15px;
+    text-align: start;
+}
+
+.Orientacao-img {
+    width: 65%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }
 
 .detalhe-rosa {
@@ -28,8 +51,5 @@ h4 {
     color: #FFC107;
 }
 
-img {
-    height: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+@media (max-width: 768px) {
 }
