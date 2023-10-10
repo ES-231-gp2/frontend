@@ -11,6 +11,7 @@ import Login from './containers/P2_Login/Login'
 import Bibliotecario from './containers/Perfis/Bibliotecario';
 import Aluno from './containers/Perfis/Aluno'
 import Catalogo from './containers/Catalogo/Catalogo';
+import Livros_Aluno from './containers/Livros_Aluno/livros_aluno'
 import Cadastro from './containers/Cadastro/Cadastro';
 import {Orientacao1, Orientacao2, Orientacao3} from './containers/P7_Orientacoes/Orientacoes'
 import Turmas from './containers/Turmas/Turmas';
@@ -46,6 +47,7 @@ function App() {
               <Route path='/turmas' element={<Turmas />} />
               <Route path='/alunos' element={<Alunos />} />
               <Route path="/catalogo" element={<Catalogo />} />
+              <Route path="/livros_aluno" element={<Livros_Aluno />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/professor" element={<Professor />} />
               <Route path="/Orientacao1" element={<Orientacao1 />} />
