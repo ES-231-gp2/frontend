@@ -7,20 +7,20 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    overflow: hidden;
 }
 
 .Form-contents {
     width: 100%;
-    height: 250px;
+    height: auto;
     border-radius: 15px;
     background: #F8F8F8;
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
-    margin: 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 300px;
 }
 
 
@@ -65,11 +65,11 @@ input {
 
 h1 {
     color: #050212;
-    font-family: Montserrat;
     font-size: 40px;
     font-weight: 650;
     line-height: 150%;
     letter-spacing: -0.95px;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 768px) {
@@ -79,24 +79,24 @@ h1 {
         align-items: center;
         margin-left: auto;
         margin-right: auto;
+        overflow: hidden;
     }
 
-    .Box-contents {
-        width: 96%;
+    .Form-contents {
+        width: 90%;
         height: auto;
-        margin: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     h1 {
-
         margin-bottom: 30px;
     }
 
     input {
         width: 90%;
-    }
-
-    button {
-        width: 30%;
     }
 }
