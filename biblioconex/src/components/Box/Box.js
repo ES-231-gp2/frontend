@@ -1,12 +1,14 @@
-
+import React from 'react';
 import './Box.css';
 
-export default function() {
-    return(
-        <div className='Contents'>
-        <div className='Image'></div>
-        <div className='Text'>Insira um pouco de texto aqui para falar sobre o box etc e tal</div>
-        <button>Saiba mais +</button>
+export default function Box({ image, text, buttonText, linkTo }) {
+    return (
+        <div className="Contents">
+            <div className="Image" style={{ backgroundImage: `url(${image})` }}></div>
+            <div className="Text">{text}</div>
+            <a href={linkTo} className="ButtonLink">
+                <button>{buttonText}</button>
+            </a>
         </div>
-    )
+    );
 }
