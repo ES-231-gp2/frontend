@@ -29,7 +29,10 @@ function Bibliotecario() {
                     </Link>
                 </div>
                 <div className='botoes-usuarios'>Dados do aluno</div>
-                <div className='botoes-usuarios'>Livros emprestados</div>
+                <div className='botoes-usuarios'>
+                    <Link to="/livros_por_aluno" className='Custom-link-button'>Livros emprestados</Link>
+                
+                </div>
             </div>
 
             <h2>Professor</h2>

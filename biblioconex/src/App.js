@@ -53,6 +53,7 @@ function App() {
               <Route path="/Orientacao1" element={<Orientacao1 />} />
               <Route path="/Orientacao2" element={<Orientacao2 />} />
               <Route path="/Orientacao3" element={<Orientacao3 />} />
+              <Route path="/livros_por_aluno" element={<Livros_Aluno/>}/>
             </Route>
           </Routes>
         </div>
