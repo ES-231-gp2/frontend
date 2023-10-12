@@ -40,3 +40,31 @@
     display: flex;
     justify-content: space-between;
 }
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .Home-contents {
+        max-width: 100%; /* Ocupar toda a largura disponível */
+        padding: 20px; /* Adicionar espaçamento interno */
+    }
+
+    img {
+        width: 680px;
+    }
+
+    .Horarios {
+        width: 640px; /* Ocupar toda a largura disponível */
+        padding: 20px; /* Adicionar espaçamento interno */
+        margin-bottom: 20px; /* Reduzir a margem inferior */
+    }
+
+    .Button {
+        width: 50%; /* Ocupar toda a largura disponível */
+    }
+
+    .Box-contents {
+        flex-direction: column; /* Empilhar elementos verticalmente */
+        align-items: center; /* Centralizar horizontalmente */
+        margin-top: 20px;
+    }
+}

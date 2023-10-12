@@ -8,7 +8,7 @@
     display: flex; /* Adicionar flex container */
     flex-direction: column; /* Organizar os elementos internos em coluna */
     align-items: flex-start; /* Alinhar itens à esquerda */
-    margin-bottom: 300px;
+    margin-bottom: 200px;
 }
 
 .Image {
@@ -31,4 +31,11 @@ button {
     border-radius: 50px;
     border: 2px solid pink;
     color: pink;
+}
+
+
+@media (max-width: 768px) {
+    .Contents {
+        margin-bottom: 80px;
+    }
 }
