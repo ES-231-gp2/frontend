@@ -32,12 +32,11 @@
     flex-direction: column;
 }
 
-.Titulo {
+.Titulo-livro {
     color: #000;
-    font-size: 16px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 500;
-    line-height: 150%;
     letter-spacing: -0.176px;
     margin: 10px;
 }
@@ -59,6 +58,7 @@
 .Sinopse {
     margin-left: 10px;
     flex-grow: 1;
+    font-size: 20px;
 }
 
 h1 {
@@ -111,8 +111,16 @@ h1 {
         margin: 50px; /* Reduza a margem superior para economizar espaço */
     }
 
+    .Categoria {
+        margin-bottom: 20px;
+    }
+
     .Contents-livros {
         max-width: 100%; /* Use toda a largura disponível em telas pequenas */
+    }
+
+    .Titulo {
+        font-size: 22px;
     }
     
     .Sinopse {
@@ -121,5 +129,13 @@ h1 {
 
     .Botao-reserva {
         margin-top: 20px; /* Aumente a margem acima do botão em telas pequenas */
+    }
+
+    .Linha-inferior {
+        height: 50px;
+    }
+
+    .Botao-seta {
+        width: 50px;
     }
 }
