@@ -1,4 +1,4 @@
-.Login-contents {
+.Cadastro-contents {
     margin-top: 100px;
     max-width: 1100px;
     height: auto;
@@ -7,25 +7,25 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    overflow: hidden;
 }
 
-.Form-contents {
+.Form-contents-cadastro {
     width: 100%;
     height: auto;
+    margin: 0 auto;
+    padding: 20px;
     border-radius: 15px;
     background: #F8F8F8;
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
-    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 300px;
 }
 
-
 input {
-    width: 90%;
+    width: 80%;
     height: 40px;
     flex-shrink: 0;
     border-radius: 30px;
@@ -35,13 +35,13 @@ input {
     text-align: center;
 }
 
-.botao-login {
+.botao-cadastro {
     width: 161px;
     height: 40px;
     flex-shrink: 0;
     border: none;
     border-radius: 50px;
-    background: #FFC107;
+    background: #FF4081;
     color: white;
     font-weight: bolder;
     font-size: 14px;
@@ -52,37 +52,35 @@ input {
     cursor: pointer;
 }
 
-.botao-login:active {
+.botao-cadastro:active {
     height: 36px;
     background: white;
-    color: #FFC107;
-    border: 2px solid #FFC107;
+    color: #FF4081;
+    border: 2px solid #FF4081;
 }
 
-.biblioteca-amarelo {
-    color: #FFC107;
+.biblioteca-rosa {
+    color: #FF4081;
 }
 
 h1 {
     color: #050212;
-    font-size: 40px;
+    font-size: 44px;
     font-weight: 650;
     line-height: 150%;
     letter-spacing: -0.95px;
-    margin-bottom: 30px;
 }
 
 @media (max-width: 768px) {
-    .Login-contents {
+    .Cadastro-contents {
         margin-top: 50px;
         padding: 20px;
         align-items: center;
         margin-left: auto;
         margin-right: auto;
-        overflow: hidden;
     }
 
-    .Form-contents {
+    .Form-contents-cadastro {
         width: 90%;
         height: auto;
         margin-left: auto;
@@ -93,6 +91,8 @@ h1 {
     }
 
     h1 {
+        width: 100%;
+        margin: auto;
         margin-bottom: 30px;
     }
 

@@ -1,4 +1,13 @@
-.Bibliotecario-contents {
+.Professor {
+    height: auto;
+    flex-shrink: 0;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.Professor-contents {
     margin-top: 100px;
     max-width: 1100px;
     height: auto;
@@ -7,12 +16,12 @@
     margin-right: auto;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; 
+    justify-content: center;
 }
 
-.Contents-perfis {
-    width: 50%;
+.Contents-card {
+    width: 70%;
     height: auto;
     border-radius: 15px;
     background: #F8F8F8;
@@ -28,19 +37,19 @@
 
 h2 { 
     color: #3F51B5;
-    font-size: 20px;
+    font-size: 26px;
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
     letter-spacing: -0.38px;
 }
 
-.botao-cadastro {
+.botao-salvar {
     width: 161px;
     height: 43px;
     flex-shrink: 0;
     border-radius: 50px;
-    background: #000000;
+    background: #FFC107;
     color: white;
     margin: 10px;
     font-weight: bolder;
@@ -52,19 +61,33 @@ h2 {
     cursor: pointer;
 }
 
-.botoes-usuarios {
-    width: 161px;
-    height: 43px;
-    flex-shrink: 0;
-    border-radius: 50px;
+.botao-salvar:active {
+    width: 126px;
+    height: 32px;
+    background: white;
+    color: #FFC107;
+    border: 2px solid #FFC107;
+}
+
+.botao {
     background: #FF4081;
-    color: white;
-    margin: 10px;
-    font-weight: bolder;
-    font-size: 14px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+}
+
+.botao:active {
+    width: 126px;
+    height: 32px;
+    background: white;
+    color: #FF4081;
+    border: 2px solid #FF4081;
+}
+
+
+.info-turma {
+    text-decoration: none; 
+  color: inherit; 
+  background: none; 
+  border: none; 
+  cursor: pointer;
+  color: #000;
+  font-weight: 600;
 }

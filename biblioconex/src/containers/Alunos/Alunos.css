@@ -1,0 +1,36 @@
+.Alunos-contents {
+    margin-top: 100px;
+    max-width: 1100px;
+    height: auto;
+    flex-shrink: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+h1 {
+    color: #050212;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.38px;
+    align-self: start;
+}
+
+h4 {
+    color: #050212;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.38px;
+    align-self: start;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        line-height: 80%;
+    }
+}

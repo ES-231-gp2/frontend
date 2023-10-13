@@ -13,9 +13,28 @@ export default function () {
                     Catálogo de livros
                 </Link></div>
             <div className='Box-contents'>
-                <Box></Box>
-                <Box></Box>
-                <Box></Box>
+            <Box
+    image="/box1.png"
+    text="Quer reservar algum livro ou entrar na fila de espera?"
+    buttonText="Saiba mais"
+    linkTo="/Orientacao1"
+/>
+
+<Box
+    image="/childrens_with_books1.png"
+    text="Sentiu falta de algum livro? Nos faça uma sugestão!"
+    buttonText="Saiba mais"
+    linkTo="/Orientacao2"
+/>
+
+<Box
+    image="/childrens_with_books2.png"
+    text="Fique por dentro dos prazos de entrega e cuidados com os livros!"
+    buttonText="Saiba mais"
+    linkTo="/Orientacao3"
+/>
+
+
             </div>
 
         </div>

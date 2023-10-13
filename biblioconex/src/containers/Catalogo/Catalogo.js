@@ -9,7 +9,7 @@ export default function () {
                     CATEGORIA 1
                 </div>
                 <div className='Contents-livros'>
-                    <p className='Titulo'>Titulo do livro</p>
+                    <p className='Titulo-livro'>Titulo do livro</p>
                     <div>
                         <div className='Livro-img-sinopse'>
                             <img className='Livro'></img>

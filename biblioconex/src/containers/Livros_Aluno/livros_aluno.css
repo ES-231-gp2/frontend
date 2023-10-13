@@ -1,0 +1,77 @@
+.Catalogo-contents {
+    margin: 50px; /* Reduza a margem superior para economizar espaço */
+    max-width: 1100px;
+    height: auto;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    margin-bottom: 30px;
+}
+
+.titulo-livros-aluno {
+    align-self: center;
+    text-align: center; /* Centraliza horizontalmente o título */
+    margin-top: 30px;
+    color: #070707;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.38px;
+}
+
+
+.Contents-livros {
+    max-width: 100%; /* Use toda a largura disponível em telas pequenas */
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #F8F8F8;
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.10);
+    display: flex;
+    flex-direction: column;
+}
+
+.Sinopse {
+    margin: 10px;
+    margin-top: 0; /* Remova a margem acima da sinopse em telas pequenas */
+}
+
+.Botao-reserva {
+    width: 130px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #FF4081;
+    color: white;
+    margin: 20px 0 0 10px; /* Aumente a margem acima do botão em telas pequenas */
+    font-weight: bolder;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Botao-reserva:active {
+    width: 126px;
+    height: 32px;
+    background: white;
+    color: #FF4081;
+    border: 2px solid #FF4081;
+}
+
+.Linha-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 18px;
+}
