@@ -33,6 +33,7 @@
     line-height: 73px;
     text-align: center;
     margin: 0 auto; /* Centralizar horizontalmente */
+    cursor: pointer;
 }
 
 .Box-contents {

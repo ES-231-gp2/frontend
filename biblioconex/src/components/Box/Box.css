@@ -31,8 +31,8 @@ button {
     border-radius: 50px;
     border: 2px solid pink;
     color: pink;
+    cursor: pointer;
 }
-
 
 @media (max-width: 768px) {
     .Contents {
