@@ -16,6 +16,7 @@ import { Orientacao1, Orientacao2, Orientacao3 } from './containers/P7_Orientaco
 import Turmas from './containers/Turmas/Turmas';
 import Alunos from './containers/Alunos/Alunos';
 import Professor from './containers/Perfis/Professor';
+import "./Mock.js"
 
 function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
