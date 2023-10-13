@@ -24,3 +24,27 @@
     height: 100%;
   }
 }
+
+
+.scrollToTopButton {
+  border-radius: 50%;
+  bottom: 14px;
+  box-shadow: 2px 3px 19px -2px rgba(138, 138, 138, 0.75);
+  border: none; /* Removido o valor '#000000' e usado 'none' */
+  cursor: pointer;
+  height: 40px;
+  position: fixed;
+  right: 50px;
+  width: 10px;
+  height: 10px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centralizar vertical e horizontalmente */
+}
+
+/* Estilo para a imagem do botão */
+.scrollToTopButton img {
+  object-fit: contain; /* Garante que a imagem não distorça */
+}
+
