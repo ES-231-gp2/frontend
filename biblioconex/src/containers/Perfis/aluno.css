@@ -10,6 +10,7 @@
     align-items: center; /* Centraliza horizontalmente */
     justify-content: center; /* Centraliza verticalmente */
     padding-bottom: 100px;
+    text-align: center;
 }
 
 .Contents-perfis {
@@ -26,6 +27,10 @@
     text-align: start;
 }
 
+.titulo {
+    align-self: center;
+}
+
 .info-livro {
     width: 100%;
     height: auto;
@@ -39,34 +44,16 @@
     text-align: start;
 }
 
-.info {
-    color: #050212;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 150%;
-    letter-spacing: -0.132px;
-}
 
-h4.info{
+.info{
     font-weight: bold;
     line-height: 100%; /* 12px */
     letter-spacing: -0.264px;
-}
-
-h2 { 
-    color: #3F51B5;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-    letter-spacing: -0.38px;
-}
-
-h2.info {
-    font-size: 26px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: -0.38px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .titulo-secao-aluno {
@@ -116,7 +103,8 @@ h2.info {
 }
 
 .Linha-inferior {
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 0 18px;
 }

@@ -4,7 +4,7 @@ import "./professor.css"
 function Professor() {
     return (
         <div class='Professor'>
-            <h2 class='info'>MEU PERFIL</h2>
+            <h1>MEU PERFIL</h1>
             <h4 class='info'>Nome completo do professor</h4>
             {/* transformar Turmas em link para página de turmas*/}
             <h4 ><Link to="/turmas" class='info-turma'>Turmas</Link></h4>
