@@ -1,5 +1,5 @@
 .Catalogo-contents {
-    margin-top: 100px;
+    margin: 50px; /* Reduza a margem superior para economizar espaço */
     max-width: 1100px;
     height: auto;
     flex-shrink: 0;
@@ -11,17 +11,25 @@
     justify-content: center;
 }
 
-.Categoria {
-    color: #4CAF50;
-    font-size: 20px;
+.info {
+    margin-bottom: 30px;
+}
+
+.titulo-livros-aluno {
+    align-self: center;
+    text-align: center; /* Centraliza horizontalmente o título */
+    margin-top: 30px;
+    color: #070707;
+    font-size: 40px;
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
     letter-spacing: -0.38px;
-    margin-top: 30px;
 }
 
+
 .Contents-livros {
+    max-width: 100%; /* Use toda a largura disponível em telas pequenas */
     width: 100%;
     flex-shrink: 0;
     border-radius: 15px;
@@ -31,43 +39,9 @@
     flex-direction: column;
 }
 
-.Titulo {
-    color: #000;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%;
-    letter-spacing: -0.176px;
-    margin: 10px;
-}
-
-.Livro-img-sinopse {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 10px;
-}
-
-.Livro {
-    width: 134px;
-    height: 196px;
-    flex-shrink: 0;
-    background: #9ca897;
-}
-
 .Sinopse {
-    margin-left: 10px;
-    flex-grow: 1;
-}
-
-h1 {
-    color: #050212;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-    letter-spacing: -0.38px;
-    align-self: start;
+    margin: 10px;
+    margin-top: 0; /* Remova a margem acima da sinopse em telas pequenas */
 }
 
 .Botao-reserva {
@@ -77,7 +51,7 @@ h1 {
     border-radius: 50px;
     background: #FF4081;
     color: white;
-    margin: 10px 0px 0px 10px;
+    margin: 20px 0 0 10px; /* Aumente a margem acima do botão em telas pequenas */
     font-weight: bolder;
     font-size: 14px;
     text-align: center;
@@ -100,25 +74,4 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin: 0 18px;
-}
-
-
-
-/* Estilos para telas menores, como smartphones */
-@media (max-width: 768px) {
-    .Catalogo-contents {
-        margin: 50px; /* Reduza a margem superior para economizar espaço */
-    }
-
-    .Contents-livros {
-        max-width: 100%; /* Use toda a largura disponível em telas pequenas */
-    }
-    
-    .Sinopse {
-        margin-top: 0; /* Remova a margem acima da sinopse em telas pequenas */
-    }
-
-    .Botao-reserva {
-        margin-top: 20px; /* Aumente a margem acima do botão em telas pequenas */
-    }
 }
