@@ -3,6 +3,11 @@ import Livro_Box from '../../components/Livro_Box/Livro_Box';
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const instance = axios.create({
+    baseURL: 'http://localhost:8080', // Set the base URL
+    // You can also set default headers if necessary
+  });
+
 export default function LivrosAluno() {
     const [livros_aluno, setLivros] = useState({});
 
@@ -14,6 +19,9 @@ export default function LivrosAluno() {
         .catch(error => {
           console.log(error);
         });
+    
+      
+
     }, []);
 
     return (
