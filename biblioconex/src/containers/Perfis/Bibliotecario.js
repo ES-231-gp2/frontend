@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom'
 import "./bibliotecario.css"
 
+import axios from "axios";
+
+const instance = axios.create({
+    baseURL: 'http://localhost:8080/'
+})
+
 function Bibliotecario() {
     return (
         <div className='Bibliotecario-contents'>
@@ -8,6 +14,12 @@ function Bibliotecario() {
             <div className='Contents-perfis'>
                 <input placeholder="ISBN"></input>
                 <div className='botao-cadastro'>Cadastrar</div>
+            </div>
+            
+            <h2>Alterar livro do mês</h2>
+            <div className='Contents-perfis'>
+                <input placeholder="ID" id="idLivroDoMes"></input>
+                <div className='botao-cadastro' onClick={() => {alterarLivroDoMes(document.getElementById("idLivroDoMes").value)}}>Alterar</div>
             </div>
 
             <h2>Turma</h2>
@@ -45,6 +57,14 @@ function Bibliotecario() {
             </div>
         </div >
     );
+}
+
+function alterarLivroDoMes(id) {
+    instance.put( "http://localhost:8080/api/livros/livro-do-mes/" + id).then(response => {
+        console.log(response);
+    }).catch(error => {
+        console.log(error);
+    });
 }
 
 export default Bibliotecario;
