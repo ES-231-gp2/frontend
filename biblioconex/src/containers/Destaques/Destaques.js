@@ -23,8 +23,8 @@ export default function () {
 
     return (
         <div className='Destaque-contents'>
-            <h1>Livros do Mês</h1>
-            <div className='Contents-livros'>
+            <h1 className='Destaque'>Livro do Mês</h1>
+            <div className='Contents-destaques'>
                 <p className='Titulo-livro'>Titulo do livro</p>
                 <div>
                     <div className='Livro-img-sinopse'>
@@ -40,8 +40,8 @@ export default function () {
                 </div>
             </div>
 
-            <h1>Horário Nobre</h1>
-            <div className='Contents-livros'>
+            <h1 className='Destaque'>Horário Nobre</h1>
+            <div className='Contents-destaques'>
                 <p className='Titulo-livro'>Titulo do livro</p>
                 <div>
                     <div className='Livro-img-sinopse'>
@@ -57,8 +57,8 @@ export default function () {
                 </div>
             </div>
 
-            <h1>LIVROS MAIS LIDOS</h1>
-            <div className='Contents-livros'>
+            <h1 className='Destaque'>Livros Mais Lidos</h1>
+            <div className='Contents-destaques'>
                 <p className='Titulo'>Titulo do livro</p>
                 <div>
                     <div className='Livro-img-sinopse'>

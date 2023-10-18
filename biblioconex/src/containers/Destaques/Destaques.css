@@ -12,7 +12,7 @@
     padding-bottom: 100px;
 }
 
-.Contents-livros {
+.Contents-destaques {
     width: 100%;
     flex-shrink: 0;
     border-radius: 15px;
@@ -20,6 +20,7 @@
     box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.10);
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
 }
 
 .Titulo-livro {
@@ -52,6 +53,14 @@
     font-size: 20px;
 }
 
+.Destaque {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.38px;
+    margin-top: 30px;
+}
+
 .Botao-reserva {
     width: 130px;
     height: 36px;
@@ -59,7 +68,7 @@
     border-radius: 50px;
     background: #FF4081;
     color: white;
-    margin: 10px 0px 0px 10px;
+    margin: 10px 0px 10px 10px;
     font-weight: bolder;
     font-size: 14px;
     text-align: center;
@@ -75,4 +84,13 @@
     background: white;
     color: #FF4081;
     border: 2px solid #FF4081;
+}
+
+@media (max-width: 768px) {
+    .Contents-destaques {
+        width: 80%;
+    }
+    .Destaque {
+        width: 80%;
+    }
 }
