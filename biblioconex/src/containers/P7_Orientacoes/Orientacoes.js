@@ -27,7 +27,7 @@ function Orientacao2() {
     return (
         <div className='Orientacao-content'>
             <h1>Saiba como <span className='detalhe-rosa'>fazer pedidos</span> ou  <span className='detalhe-amarelo'>sugerir um livro</span></h1>
-            <img className='Orientacao-img' src="/childrens_with_books1.png" alt="Crianças com livros" />
+            <img className='Orientacao-img' src="/childrens_with_books1_transformed.png" alt="Crianças com livros" />
             <p className='Orientacao-text'>Neste guia, explicaremos como você pode fazer pedidos ou sugerir livros para o acervo da biblioteca. Siga os passos abaixo para compartilhar suas sugestões pessoalmente:</p>
             <p className='Orientacao-text'><strong>Passo 1: Visite a Biblioteca</strong><br />
                 Dirija-se pessoalmente à biblioteca da nossa instituição durante o horário de funcionamento.</p>
