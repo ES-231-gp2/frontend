@@ -14,7 +14,7 @@ export default function () {
         instance.get('http://localhost:8080/api/livros/livro-do-mes')
         .then(response => {
           setLivroDoMes(response.data);
-          console.log(livro_Do_Mes);
+          console.log(response.data);
         })
         .catch(error => {
           console.log(error);
