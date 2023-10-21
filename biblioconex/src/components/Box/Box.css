@@ -29,8 +29,9 @@ button {
     margin: 10px;
     background-color: #FFF;
     border-radius: 50px;
-    border: 2px solid pink;
-    color: pink;
+    border: 2px solid #FF4081;
+    color: #FF4081;
+    font-weight: 700;
     cursor: pointer;
 }
 

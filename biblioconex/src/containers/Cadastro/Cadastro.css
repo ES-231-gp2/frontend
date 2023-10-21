@@ -7,6 +7,7 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    align-items: center;
 }
 
 .Form-contents-cadastro {
@@ -34,6 +35,25 @@ input {
     margin: 10px;
     text-align: center;
 }
+
+select {
+    width: 80%;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 1px solid #D9D9D9;
+    background: #FFF;
+    margin: 10px;
+    text-align: center;
+}
+
+select option {
+    background: #fff; 
+    color: #333; 
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
 
 .botao-cadastro {
     width: 161px;
@@ -71,6 +91,21 @@ h1 {
     letter-spacing: -0.95px;
 }
 
+.mensagem-sucesso {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #007924;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.10);
+    border-radius: 8px;
+}
+
+
 @media (max-width: 768px) {
     .Cadastro-contents {
         margin-top: 50px;
@@ -90,6 +125,11 @@ h1 {
         align-items: center;
     }
 
+    .mensagem-sucesso {
+        width: 90%;
+        height: auto;
+    }
+
     h1 {
         width: 100%;
         margin: auto;
@@ -97,6 +137,10 @@ h1 {
     }
 
     input {
+        width: 90%;
+    }
+
+    select {
         width: 90%;
     }
 }

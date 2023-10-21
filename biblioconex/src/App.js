@@ -16,6 +16,7 @@ import { Orientacao1, Orientacao2, Orientacao3 } from './containers/P7_Orientaco
 import Turmas from './containers/Turmas/Turmas';
 import Alunos from './containers/Alunos/Alunos';
 import Professor from './containers/Perfis/Professor';
+import Destaques from './containers/Destaques/Destaques';
 import "./Mock.js"
 
 function App() {
@@ -80,6 +81,7 @@ function App() {
               <Route path="/Orientacao2" element={<Orientacao2 />} />
               <Route path="/Orientacao3" element={<Orientacao3 />} />
               <Route path="/livros_por_aluno" element={<Livros_Aluno />} />
+              <Route path="/destaques" element={<Destaques />} />
             </Route>
           </Routes>
         </div>
