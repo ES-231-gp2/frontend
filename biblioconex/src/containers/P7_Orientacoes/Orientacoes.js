@@ -3,7 +3,7 @@ import './Orientacoes.css';
 function Orientacao1() {
     return (
         <div className='Orientacao-content'>
-            <h1>Saiba como <span className='detalhe-rosa'>reservar um livro</span> ou entrar para a <span className='detalhe-amarelo'>fila de espera</span></h1>
+            <h1 className="titulo">Saiba como <span className='detalhe-rosa'>reservar um livro</span> ou entrar na <span className='detalhe-amarelo'>fila de espera</span></h1>
             <img className='Orientacao-img' src='/children-lendo.png' alt='Duas crianças lendo livros ao lado de uma estante de livros enquanto uma escolhe um para ler' />
             <p className='Orientacao-text'>Neste guia, explicaremos como você pode reservar um livro na nossa biblioteca online. Siga os passos abaixo para garantir que você possa acessar o livro desejado.</p>
             <p className='Orientacao-text'><strong>Passo 1: Acesse a Biblioteca Online</strong><br />
@@ -26,7 +26,7 @@ function Orientacao1() {
 function Orientacao2() {
     return (
         <div className='Orientacao-content'>
-            <h1>Saiba como <span className='detalhe-rosa'>fazer pedidos</span> ou  <span className='detalhe-amarelo'>sugerir um livro</span></h1>
+            <h1 className="titulo">Saiba como <span className='detalhe-rosa'>fazer pedidos</span> ou  <span className='detalhe-amarelo'>sugerir um livro</span></h1>
             <img className='Orientacao-img' src="/childrens_with_books1_transformed.png" alt="Crianças com livros" />
             <p className='Orientacao-text'>Neste guia, explicaremos como você pode fazer pedidos ou sugerir livros para o acervo da biblioteca. Siga os passos abaixo para compartilhar suas sugestões pessoalmente:</p>
             <p className='Orientacao-text'><strong>Passo 1: Visite a Biblioteca</strong><br />
@@ -45,7 +45,7 @@ function Orientacao2() {
 function Orientacao3() {
     return (
         <div className='Orientacao-content'>
-            <h1>Saiba como funcionam <span className='detalhe-rosa'>nossos prazos de entrega</span> e <span className='detalhe-amarelo'>cuidados com os livros</span></h1>
+            <h1 className="titulo">Saiba como funcionam <span className='detalhe-rosa'>nossos prazos de entrega</span> e <span className='detalhe-amarelo'>cuidados com os livros</span></h1>
             <img className='Orientacao-img' src="./childrens_with_books2.png" alt="Crianças com livros" />
             <p className='Orientacao-text'>Neste guia, explicaremos como funcionam os prazos de entrega na biblioteca e como você deve cuidar dos livros que emprestar. Siga os passos abaixo para garantir uma experiência positiva:</p>
             <p className='Orientacao-text'><strong>Passo 1: Confira o Prazo de Entrega</strong><br />

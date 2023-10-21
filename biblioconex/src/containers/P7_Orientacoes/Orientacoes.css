@@ -9,31 +9,31 @@
     text-align: center;
 }
 
-h1 {
+.titulo {
+    width: 75%;
     color: #050212;
-    font-size: 36px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
     letter-spacing: -0.38px;
-    align-self: start;
-}
+    align-self: center;
+}   
 
 .Orientacao-text {
     width: 75%;
     color: #1E1E1E;
-    font-family: Montserrat;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 21px */
+    line-height: 150%;
     letter-spacing: -0.154px;
     margin: 30px auto 15px;
-    text-align: start;
+    text-align: justify;    
 }
 
 .Orientacao-img {
-    width: 65%;
+    width: 75%;
     height: auto;
     margin: 0 auto;
     display: flex;
@@ -50,3 +50,4 @@ h1 {
 .detalhe-amarelo {
     color: #FFC107;
 }
+
