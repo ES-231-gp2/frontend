@@ -4,7 +4,7 @@ import "./bibliotecario.css"
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'http://localhost:8080/'
+    baseURL: 'http://localhost:8080'
 })
 
 function Bibliotecario() {
@@ -12,8 +12,9 @@ function Bibliotecario() {
         <div className='Bibliotecario-contents'>
             <h2>Cadastrar livros</h2>
             <div className='Contents-perfis'>
-                <input placeholder="ISBN"></input>
-                <div className='botao-cadastro'>Cadastrar</div>
+                <input placeholder="ISBN" id="ISBN"></input>
+                <input placeholder="Número de Exemplares" id="num_exemplares"></input>
+                <div className='botao-cadastro' onClick={() => cadastrarLivro(document.getElementById('ISBN').value, document.getElementById('num_exemplares').value)}>Cadastrar</div>
             </div>
             
             <h2>Alterar livro do mês</h2>
@@ -65,6 +66,41 @@ function alterarLivroDoMes(id) {
     }).catch(error => {
         console.log(error);
     });
+}
+
+function cadastrarLivro(ISBN, num_exemplares) {
+    console.log(ISBN);
+
+    let livro;
+
+    console.log(ISBN);
+
+    console.log("Request URL: " + instance.defaults.baseURL + "/api/livros/isbn/" + ISBN);
+
+    instance.get("/api/livros/isbn/" + ISBN).then(function (response) {
+        livro = response.data;
+        if (livro.edicao == null) {
+            livro.edicao = -1;
+        }
+
+    }).catch(function (error) {
+        console.log("ERROR GET BOOK THROUGH ISBN: ", error);
+    }).then(function () {
+
+        instance.post('/api/livros', livro, 
+        {
+            params: {
+                numeroExemplares: 1
+            }
+        }).then(function (response) {
+            if (response.status === 201) {
+                console.log("success");
+            } 
+        }).catch(function (error) {
+            console.log("ERROR POST NEW BOOK: ", error);
+        });
+    })
+    
 }
 
 export default Bibliotecario;
