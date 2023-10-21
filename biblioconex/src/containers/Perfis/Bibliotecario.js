@@ -69,16 +69,11 @@ function alterarLivroDoMes(id) {
 }
 
 function cadastrarLivro(ISBN, num_exemplares) {
-    console.log(ISBN);
-
     let livro;
-
-    console.log(ISBN);
-
-    console.log("Request URL: " + instance.defaults.baseURL + "/api/livros/isbn/" + ISBN);
 
     instance.get("/api/livros/isbn/" + ISBN).then(function (response) {
         livro = response.data;
+        // Boa parte dos livros não estão vindo com edição
         if (livro.edicao == null) {
             livro.edicao = -1;
         }
@@ -94,7 +89,7 @@ function cadastrarLivro(ISBN, num_exemplares) {
             }
         }).then(function (response) {
             if (response.status === 201) {
-                console.log("success");
+                console.log("success, book registered");
             } 
         }).catch(function (error) {
             console.log("ERROR POST NEW BOOK: ", error);
