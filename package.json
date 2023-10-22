@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "biblioconex": "file:biblioconex",
+    "package-lock.json": "^1.0.0"
+  }
+}

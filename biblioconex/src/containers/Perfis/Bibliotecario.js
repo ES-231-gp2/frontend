@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import {useEffect, useState} from "react";
 import "./bibliotecario.css"
 
 import axios from "axios";
@@ -7,14 +8,58 @@ const instance = axios.create({
     baseURL: 'http://localhost:8080'
 })
 
+
 function Bibliotecario() {
+    const [cadastroSucesso, setCadastroSucesso] = useState(false);
+    const [confirmaCadastro, setConfirmaCadastro] = useState(false);
+    const [livroEmCadastro, setLivroEmCadastro] = useState([]);
+
+    const handleCadastroClick = () => {
+        // Lógica de cadastro simulada
+        setTimeout(() => {
+            setConfirmaCadastro(true);
+        }, 500);
+    }
+    
+    const handleConfirmaCadastroClick = () => {
+        // Lógica de cadastro simulada
+        setTimeout(() => {
+            setCadastroSucesso(true);
+        }, 500);
+    }
+
+    async function getLivro(ISBN) {
+        try {
+            const {data} = instance.get("/api/livros/isbn/" + ISBN)
+            setLivroEmCadastro(data)
+        } catch (error) {
+            console.log('ERROR: GET BOOK: ', error)   
+        }
+    }
+
+    useEffect(() => {
+        if (confirmaCadastro) {
+            getLivro(document.getElementById('ISBN').value);
+        }
+    }, [confirmaCadastro]);
+
     return (
         <div className='Bibliotecario-contents'>
             <h2>Cadastrar livros</h2>
+            {cadastroSucesso && (
+                <div className='mensagem-sucesso'>
+                    Cadastro realizado com sucesso!
+                </div>
+            )}
+            {confirmaCadastro && (
+                <div className='Contents-perfis'>
+                    oii vey {livroEmCadastro.titulo}
+                </div>
+            )}
             <div className='Contents-perfis'>
                 <input placeholder="ISBN" id="ISBN"></input>
                 <input placeholder="Número de Exemplares" id="num_exemplares"></input>
-                <div className='botao-cadastro' onClick={() => cadastrarLivro(document.getElementById('ISBN').value, document.getElementById('num_exemplares').value)}>Cadastrar</div>
+                <div className='botao-cadastro' onClick={() => cadastrarLivro(document.getElementById('ISBN').value, document.getElementById('num_exemplares').value, handleCadastroClick)}>Cadastrar</div>
             </div>
             
             <h2>Alterar livro do mês</h2>
@@ -68,7 +113,7 @@ function alterarLivroDoMes(id) {
     });
 }
 
-function cadastrarLivro(ISBN, num_exemplares) {
+function cadastrarLivro(ISBN, num_exemplares, handleCadastroClick) {
     let livro;
 
     instance.get("/api/livros/isbn/" + ISBN).then(function (response) {
@@ -77,6 +122,8 @@ function cadastrarLivro(ISBN, num_exemplares) {
         if (livro.edicao == null) {
             livro.edicao = -1;
         }
+        handleCadastroClick();
+
 
     }).catch(function (error) {
         console.log("ERROR GET BOOK THROUGH ISBN: ", error);
@@ -85,7 +132,7 @@ function cadastrarLivro(ISBN, num_exemplares) {
         instance.post('/api/livros', livro, 
         {
             params: {
-                numeroExemplares: 1
+                numeroExemplares: num_exemplares
             }
         }).then(function (response) {
             if (response.status === 201) {

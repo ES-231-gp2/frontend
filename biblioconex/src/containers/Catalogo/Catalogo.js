@@ -3,13 +3,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'http://localhost:8080/'
+    baseURL: 'http://localhost:8080'
 })
 
 export default function () {
     const [ficcao, setFiccao] = useState([]);
     const [romance, setRomance] = useState([]);
     const [computers, setComputers] = useState([]);
+    const [youngAdult, setYoungAdult] = useState([]);
 
     async function getLivrosFiction() {
         try {
@@ -38,9 +39,19 @@ export default function () {
         }
     }
 
+    async function getLivrosJovemAdulto() {
+        try {
+            const {data} = await instance.get('http://localhost:8080/api/livros/generos?generos=Young Adult Fiction')
+            setYoungAdult(data)
+        } catch (error) {
+            console.log('ERROR: GET ROMANCE: ', error)   
+        }
+    }
+
     useEffect(() => {
         getLivrosFiction();
         getLivrosComputadores();
+        getLivrosJovemAdulto();
     }, []);
     
         return (
@@ -51,6 +62,12 @@ export default function () {
                         Ficção
                     </div>
                         {formatBooks(ficcao)}
+                </div>
+                <div>
+                    <div className='Categoria'>
+                        Jovem Adulto
+                    </div>
+                        {formatBooks(youngAdult)}
                 </div>
                 <div>
                     <div className='Categoria'>
