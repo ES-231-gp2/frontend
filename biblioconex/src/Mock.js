@@ -13,8 +13,8 @@ const livros_request = {
     },
     "Título 2": {
         "titulo": "Tutorial de React",
-        "imgSrc": "/logo192.svg",
-        "imgAlt": "Descrição da imagem",
+        "imgSrc": " ",
+        "imgAlt": " ",
         "sinopse": "Como programar em React..."
     },
 }

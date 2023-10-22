@@ -31,14 +31,19 @@
     width: 134px;
     height: 196px;
     flex-shrink: 0;
-    background: #9ca897;
+    background: red;
 }
 
-.Sinopse {
-    margin-left: 10px;
-    flex-grow: 1;
-    font-size: 20px;
+.Livro {
+    width: 150px;
+    height: 200px;
+    flex-shrink: 0;
+    align-items: center;
+    background-image: url('default.png');
+    background-size: cover; /* Ajusta o tamanho da imagem para preencher o contêiner */
+    background-repeat: no-repeat; /* Impede a repetição da imagem de fundo */
 }
+
 
 
 .Botao-reserva {

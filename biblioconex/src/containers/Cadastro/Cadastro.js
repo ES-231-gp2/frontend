@@ -30,7 +30,7 @@ export default function () {
                 email: '',
                 senha: '',
             });
-        }, 5000);
+        }, 2500);
     };
 
     if (redirectToLogin) {
