@@ -2,6 +2,9 @@ import React from "react";
 import "./Livro_Box.css"
 
 export default function LivroBox(props) {
+
+
+
     return (
         <div className='Contents-livros'>
             <p className='Titulo'>{props.titulo}</p>

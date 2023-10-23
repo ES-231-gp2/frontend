@@ -69,12 +69,11 @@ function App() {
             <Route path="/">
               <Route index element={<Home />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/perfil" element={<Bibliotecario />} />
+              <Route path="/bibliotecario" element={<Bibliotecario />} />
               <Route path="/aluno" element={<Aluno />} />
               <Route path="/turmas" element={<Turmas />} />
               <Route path="/alunos" element={<Alunos />} />
               <Route path="/catalogo" element={<Catalogo />} />
-              <Route path="/livros_aluno" element={<Livros_Aluno />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/professor" element={<Professor />} />
               <Route path="/Orientacao1" element={<Orientacao1 />} />

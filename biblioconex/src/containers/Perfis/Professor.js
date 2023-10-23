@@ -17,7 +17,7 @@ function Professor() {
                     <div className='botao-salvar'>Salvar</div>
                 </div>
 
-                <div className='botao' style={{flex: "right"}}>Alterar dados</div>
+               {/*<div className='botao' style={{flex: "right"}}>Alterar dados</div>*/}
 
             </div >
         </div>
