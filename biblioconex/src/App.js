@@ -18,6 +18,7 @@ import Alunos from './containers/Alunos/Alunos';
 import Professor from './containers/Perfis/Professor';
 import Destaques from './containers/Destaques/Destaques';
 import "./Mock.js"
+import AlunoByBibliotecario from './containers/Perfis/AlunoBybibliotecario';
 
 function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -81,6 +82,8 @@ function App() {
               <Route path="/Orientacao3" element={<Orientacao3 />} />
               <Route path="/livros_por_aluno" element={<Livros_Aluno />} />
               <Route path="/destaques" element={<Destaques />} />
+              <Route path="/perfil-aluno" element={<AlunoByBibliotecario />} />
+
             </Route>
           </Routes>
         </div>

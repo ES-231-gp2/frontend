@@ -43,6 +43,28 @@
     cursor: pointer;
 }
 
+.user-aluno {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    flex-shrink: 0;
+    border-radius: 100%;
+    background: #FF4081;
+    color: white;
+    font-weight: bolder;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.link-user-aluno {
+    text-decoration: none;
+}
+  
+
 .Botao-excluir:active {
     width: 26px;
     height: 26px;
