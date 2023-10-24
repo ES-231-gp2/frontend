@@ -10,27 +10,40 @@ export default function Alunos() {
 
   // Array de alunos (você pode obter esses dados de onde preferir)
   const alunos = [
-    { nome: "Aluno 1", turma: "Turma 1" },
-    { nome: "Aluno 2", turma: "Turma 2" },
-    { nome: "Aluno 3", turma: "Turma 1" },
-    { nome: "Aluno 4", turma: "Turma 3" },
-    { nome: "Aluno 5", turma: "Turma 2" },
+    { nome: "Aluno 1", tipo: "aluno", turma: "Turma 1" },
+    { nome: "Aluno 2", tipo: "aluno", turma: "Turma 2" },
+    { nome: "Aluno 3", tipo: "aluno", turma: "Turma 1" },
+    { nome: "Aluno 4", tipo: "aluno", turma: "Turma 3" },
+    { nome: "Aluno 5", tipo: "aluno", turma: "Turma 2" },
+    { nome: "Turma 1", tipo: "turma" },
+    { nome: "Turma 2", tipo: "turma" },
+    { nome: "Turma 3", tipo: "turma" },
   ];
 
   // Função para renderizar os alunos com base na turma selecionada
   const renderAlunos = () => {
     if (turmaSelecionada === "Todas") {
-      return alunos.map((aluno, index) => (
-        <Card key={index} nome={aluno.nome} />
-      ));
+      // Se "Todas" estiver selecionada, renderize todos os alunos
+      return alunos
+        .filter((aluno) => aluno.tipo === "aluno")
+        .map((aluno, index) => (
+          <Card key={index} nome={aluno.nome} tipo={aluno.tipo} onDelete={() => handleDeleteAluno(aluno.nome)} />
+        ));
     } else {
-      const alunosFiltrados = alunos.filter(
-        (aluno) => aluno.turma === turmaSelecionada
+      // Filtrar e renderizar somente alunos da turma selecionada
+      const alunosDaTurmaSelecionada = alunos.filter(
+        (aluno) => aluno.turma === turmaSelecionada && aluno.tipo === "aluno"
       );
-      return alunosFiltrados.map((aluno, index) => (
-        <Card key={index} nome={aluno.nome} />
+      return alunosDaTurmaSelecionada.map((aluno, index) => (
+        <Card key={index} nome={aluno.nome} tipo={aluno.tipo} onDelete={() => handleDeleteAluno(aluno.nome)} />
       ));
     }
+  };
+
+  // Função para lidar com a exclusão de alunos
+  const handleDeleteAluno = (nomeAluno) => {
+    // Implemente a lógica para excluir o aluno com base no nome
+    console.log(`Excluir aluno: ${nomeAluno}`);
   };
 
   return (

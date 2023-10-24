@@ -19,7 +19,7 @@ export default function Turmas() {
         <div className='Turmas-contents'>
             <h1 className='h1-turmas'>TURMAS</h1>
             {turmas.map((turma) => (
-                <Card key={turma.id} nome={turma.nome} onDelete={handleDelete} />
+                <Card tipo="turma" key={turma.id} nome={turma.nome} onDelete={handleDelete} />
             ))}
         </div>
     );
