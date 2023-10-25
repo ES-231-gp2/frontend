@@ -62,10 +62,9 @@ function AlunoByBibliotecario() {
 
       {isEditing ? (
         <div
-          className="botao"
+          className="botao-perfil-aluno"
           style={{
             alignSelf: "center",
-            background: "#FFC107",
             marginBottom: "50px",
           }}
           onClick={handleSaveClick}
@@ -74,10 +73,9 @@ function AlunoByBibliotecario() {
         </div>
       ) : (
         <div
-          className="botao"
+          className="botao-perfil-aluno"
           style={{
             alignSelf: "center",
-            background: "#FFC107",
             marginBottom: "50px",
           }}
           onClick={handleEditClick}

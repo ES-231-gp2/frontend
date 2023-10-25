@@ -50,9 +50,9 @@ function Aluno() {
       </div>
 
       {isEditing ? (
-        <div className='botao' style={{ alignSelf: "center", background: "#FFC107", marginBottom: '50px' }} onClick={handleSaveClick}>Salvar</div>
+        <div className="botao-perfil-aluno" style={{ alignSelf: "center", marginBottom: '50px' }} onClick={handleSaveClick}>Salvar</div>
       ) : (
-        <div className='botao' style={{ alignSelf: "center", background: "#FFC107", marginBottom: '50px' }} onClick={handleEditClick}>Alterar dados</div>
+        <div className="botao-perfil-aluno" style={{ alignSelf: "center", marginBottom: '50px' }} onClick={handleEditClick}>Alterar dados</div>
       )}
             
                 
