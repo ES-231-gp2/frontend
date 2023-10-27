@@ -5,14 +5,14 @@ import lupa from './imagens/lupa.svg';
 import './App.css';
 import './App-header.css';
 
-import Home from './containers/P1_Home/Home';
-import Login from './containers/P2_Login/Login';
+import Home from './containers/Home/Home';
+import Login from './containers/Login/Login';
 import Bibliotecario from './containers/Perfis/Bibliotecario';
 import Aluno from './containers/Perfis/Aluno';
 import Catalogo from './containers/Catalogo/Catalogo';
 import Livros_Aluno from './containers/Livros_Aluno/livros_aluno';
 import Cadastro from './containers/Cadastro/Cadastro';
-import { Orientacao1, Orientacao2, Orientacao3 } from './containers/P7_Orientacoes/Orientacoes';
+import { Orientacao1, Orientacao2, Orientacao3 } from './containers/Orientacoes/Orientacoes';
 import Turmas from './containers/Turmas/Turmas';
 import Alunos from './containers/Alunos/Alunos';
 import Professor from './containers/Perfis/Professor';
