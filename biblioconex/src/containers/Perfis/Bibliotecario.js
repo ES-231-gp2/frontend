@@ -63,11 +63,6 @@ function Bibliotecario() {
             Alunos por turma
           </Link>
         </div>
-        <div className="botoes-usuarios">
-          <Link to="/turmas" className="Custom-link-button">
-            Alterar dados
-          </Link>
-        </div>
       </div>
 
       {isTurmaModalOpen && <CadastroTurmaModal closeModal={closeTurmaModal} />}
