@@ -2,12 +2,31 @@ import { Link } from "react-router-dom";
 import "./bibliotecario.css";
 
 import axios from "axios";
+import { useState } from "react";
+import CadastroTurmaModal from "../Modal/CadastraTurmaModal";
 
 const instance = axios.create({
   baseURL: "http://localhost:8080",
 });
 
 function Bibliotecario() {
+
+  const [isTurmaModalOpen, setIsTurmaModalOpen] = useState(false);
+
+  // Resto do código...
+
+  const openTurmaModal = () => {
+    setIsTurmaModalOpen(true);
+  };
+
+  const closeTurmaModal = () => {
+    setIsTurmaModalOpen(false);
+  };
+
+  const cadastrarTurma = (dadosTurma) => {
+    // Execute a lógica para cadastrar a turma com os dados recebidos
+  };
+
   return (
     <div className="Bibliotecario-contents">
       <h2>Cadastrar livros</h2>
@@ -42,14 +61,21 @@ function Bibliotecario() {
 
       <h2>Turma</h2>
       <div className="Contents-perfis">
-        <div className="botoes-usuarios">Cadastrar turma</div>
+        <div className="botoes-usuarios" onClick={openTurmaModal}>Cadastrar turma</div>
         <div className="botoes-usuarios">
           <Link to="/alunos" className="Custom-link-button">
             Alunos por turma
           </Link>
         </div>
-        <div className="botoes-usuarios">Alterar dados</div>
+        <div className="botoes-usuarios">
+          <Link to="/turmas" className="Custom-link-button">
+            Alterar dados
+          </Link>
+        </div>
       </div>
+
+      {isTurmaModalOpen && <CadastroTurmaModal closeModal={closeTurmaModal} cadastrarTurma={cadastrarTurma} />}
+
 
       <h2>Cadastrar usuários</h2>
       <div className="Contents-perfis">
