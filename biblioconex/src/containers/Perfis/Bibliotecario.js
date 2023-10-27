@@ -23,10 +23,6 @@ function Bibliotecario() {
     setIsTurmaModalOpen(false);
   };
 
-  const cadastrarTurma = (dadosTurma) => {
-    // Execute a lógica para cadastrar a turma com os dados recebidos
-  };
-
   return (
     <div className="Bibliotecario-contents">
       <h2>Cadastrar livros</h2>
@@ -74,7 +70,7 @@ function Bibliotecario() {
         </div>
       </div>
 
-      {isTurmaModalOpen && <CadastroTurmaModal closeModal={closeTurmaModal} cadastrarTurma={cadastrarTurma} />}
+      {isTurmaModalOpen && <CadastroTurmaModal closeModal={closeTurmaModal} />}
 
 
       <h2>Cadastrar usuários</h2>
