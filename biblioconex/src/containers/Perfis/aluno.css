@@ -60,7 +60,7 @@
     width: 60%;
 }
 
-.botao {
+.botao-perfil-aluno {
     width: 161px;
     height: 43px;
     flex-shrink: 0;
@@ -75,6 +75,14 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.botao-perfil-aluno:active {
+    width: 157px;
+    height: 39px;
+    background: white;
+    color: #FFC107;
+    border: 2px solid #FFC107;
 }
 
 .Botao-reserva {
@@ -101,6 +109,8 @@
     color: #FF4081;
     border: 2px solid #FF4081;
 }
+
+
 
 .Linha-inferior {
     width: 100%;

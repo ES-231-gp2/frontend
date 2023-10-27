@@ -1,4 +1,4 @@
-.Turma {
+.Card {
     width: 80%;
     margin: 20px auto;
     flex-shrink: 0;
@@ -8,10 +8,9 @@
     padding: 10px;
     display: flex;
     justify-content: space-between;
-}
-
-
-.Nome-turma {
+  }
+  
+  .Nome-turma {
     margin: 10px;
     color: #000;
     font-size: 16px;
@@ -24,9 +23,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.Botao-excluir {
+  }
+  
+  .Botao-excluir,
+  .user-aluno {
     width: 30px;
     height: 30px;
     margin: 10px;
@@ -41,16 +41,25 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-}
-
-.Botao-excluir:active {
+  }
+  
+  .user-aluno {
+    background: #2196F3; /* Cor azul para tipo "aluno" */
+  }
+  
+  .link-user-aluno {
+    text-decoration: none;
+  }
+  
+  .Botao-excluir:active {
     width: 26px;
     height: 26px;
     background: white;
     color: #FF4081;
     border: 2px solid #FF4081;
-}
-
-.Exclusao-confirmacao {
+  }
+  
+  .Exclusao-confirmacao {
     width: 100%;
-}
+  }
+  
