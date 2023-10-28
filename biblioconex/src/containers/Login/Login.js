@@ -3,7 +3,6 @@ import './Login.css'
 
 export default function () {
     return (
-        
         <div className='Login-contents'>
             <h1>ACESSO À <span className='biblioteca-amarelo'>BIBLIOTECA</span></h1>
             <div className='Form-contents'>
@@ -16,6 +15,5 @@ export default function () {
                 </div>
             </div>
         </div>
-
     )
 }

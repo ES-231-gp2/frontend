@@ -99,12 +99,12 @@
     }
 
     .Box-contents {
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
     }
 
     .Button-contents {
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
     }
 

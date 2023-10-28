@@ -1,9 +1,9 @@
-import './Destaques.css'
-import { useEffect, useState } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import './Destaques.css';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:8080/'
+    baseURL: process.env.REACT_APP_ENV
 })
 
 export default function () {
@@ -11,14 +11,14 @@ export default function () {
     const [livro_Do_Mes, setLivroDoMes] = useState({});
 
     useEffect(() => {
-        instance.get('http://localhost:8080/api/livros/livro-do-mes')
-        .then(response => {
-          setLivroDoMes(response.data);
-          console.log(response.data);
-        })
-        .catch(error => {
-          console.log(error);
-        });
+        instance.get('/livros/livro-do-mes')
+            .then(response => {
+                setLivroDoMes(response.data);
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }, []);
 
     return (

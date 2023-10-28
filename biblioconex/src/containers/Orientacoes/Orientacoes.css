@@ -18,7 +18,7 @@
     line-height: 150%;
     letter-spacing: -0.38px;
     align-self: center;
-}   
+}
 
 .Orientacao-text {
     width: 75%;
@@ -29,7 +29,7 @@
     line-height: 150%;
     letter-spacing: -0.154px;
     margin: 30px auto 15px;
-    text-align: justify;    
+    text-align: justify;
 }
 
 .Orientacao-img {
@@ -50,4 +50,3 @@
 .detalhe-amarelo {
     color: #FFC107;
 }
-
