@@ -8,33 +8,41 @@ const instance = axios.create({
 
 export default function () {
 
-    const [livro_Do_Mes, setLivroDoMes] = useState({});
+    const [livroDoMes, setLivroDoMes] = useState({});
+    const [livrosMaisLidos, setLivrosMaisLidos] = useState([]);
+
+    async function getLivroDoMes() {
+        try {
+            const { data } = await instance.get('/livros/livro-do-mes')
+            setLivroDoMes(data)
+        } catch (error) {
+            console.log('ERROR: GET LIVROS DO MÊS: ', error)
+        }
+    }
+
+    async function getLivrosMaisLidos() {
+        try {
+            const { data } = await instance.get('/livros/mais-lidos')
+            setLivrosMaisLidos(data)
+        } catch (error) {
+            console.log('ERROR: GET LIVROS MAIS LIDOS: ', error)
+        }
+    }
 
     useEffect(() => {
-        instance.get('/livros/livro-do-mes')
-            .then(response => {
-                setLivroDoMes(response.data);
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
+        getLivroDoMes();
+        getLivrosMaisLidos()
     }, []);
 
     return (
         <div className='Destaque-contents'>
             <h1 className='Destaque'>Livro do Mês</h1>
             <div className='Contents-destaques'>
-                <p className='Titulo-livro'>Titulo do livro</p>
+                <p className='Titulo-livro'>{livroDoMes.titulo}</p>
                 <div>
                     <div className='Livro-img-sinopse'>
-                        <img className='Livro-destaque'></img>
-                        <p className='Sinopse'>
-                            A jovem estudante Dolores Dreier é a única suspeita do
-                            brutal assassinato de sua melhor amiga.
-                            Cercada pela mídia e encurralada pelas provas, ela deve
-                            enfrentar suas próprias dúvidas sobre o que realmente aconteceu.
-                        </p>
+                        <img src={livroDoMes.capa} className='Livro-destaque'></img>
+                        <p className='Sinopse'>{livroDoMes.descricao}</p>
                     </div>
                     <div className='Botao-reserva'>Visualizar</div>
                 </div>
