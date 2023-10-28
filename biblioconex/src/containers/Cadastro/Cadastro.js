@@ -28,18 +28,34 @@ export default function () {
         setUserData({ ...userData, [name]: value });
     };
 
+    const registrarCadastroSucesso = () => { 
+        setCadastroSucesso(true);
+        setRedirectToLogin(true);
+    }
+
     function handleCadastroClick() {
         // Lógica de cadastro simulada
         
-        if (userData.tipoUsuario == "aluno") {
+        let api = "";
+
+        console.log(userData.tipoUsuario);
+
+        switch (userData.tipoUsuario) {
+            case 'aluno':
+                api = "alunos";
+                break;
+            case 'professor':
+                api = "professores";
+                userData.turmas_ids = []
+                break;
             
-            instance.post(baseUrl + '/api/alunos', userData).then((response) => {
-                setCadastroSucesso(true);
-                setRedirectToLogin(true);
-            }).catch((error) => {
-                alert(error);
-            });
         }
+        
+        instance.post(baseUrl + '/api/' + api, userData).then((response) => {
+            registrarCadastroSucesso();
+        }).catch((error) => {
+            alert(error);
+        });
         
         setUserData({
             nome: '',
