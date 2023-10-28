@@ -24,21 +24,9 @@ export default function () {
     return (
         <div className='Destaque-contents'>
             <h1 className='Destaque'>Livro do Mês</h1>
-            <div className='Contents-destaques'>
-                <p className='Titulo-livro'>Titulo do livro</p>
-                <div>
-                    <div className='Livro-img-sinopse'>
-                        <img className='Livro-destaque'></img>
-                        <p className='Sinopse'>
-                            A jovem estudante Dolores Dreier é a única suspeita do
-                            brutal assassinato de sua melhor amiga.
-                            Cercada pela mídia e encurralada pelas provas, ela deve
-                            enfrentar suas próprias dúvidas sobre o que realmente aconteceu.
-                        </p>
-                    </div>
-                    <div className='Botao-reserva'>Visualizar</div>
-                </div>
-            </div>
+
+            {formataLivro(livro_Do_Mes)}
+
 
             <h1 className='Destaque'>Horário Nobre</h1>
             <div className='Contents-destaques'>
@@ -78,4 +66,25 @@ export default function () {
             </div>
         </div>
     )
+}
+
+function formataLivro(livro) {
+    return  (
+
+        <div className='Contents-destaques'>
+                <p className='Titulo-livro'>{livro.titulo}</p>
+                <div>
+                    <div className='Livro-img-sinopse'>
+                        <img className='Livro-destaque' src={livro.capa}></img>
+                        <p className='Sinopse'>
+                            {livro.descricao}
+                        </p>
+                    </div>
+                    <div className='Botao-reserva'>Visualizar</div>
+                </div>
+            </div>
+
+       
+    )
+    
 }
