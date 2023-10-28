@@ -1,5 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import './Cadastro.css';
+import axios from "axios";
+
+const instance = axios.create({
+    baseURL: process.env.REACT_APP_ENV,
+  });
+
 
 export default function () {
     const [userData, setUserData] = useState({
@@ -10,32 +16,70 @@ export default function () {
         senha: '',
     });
 
+    const [turmas, setTurmas] = useState([])
     const [cadastroSucesso, setCadastroSucesso] = useState(false);
     const [redirectToLogin, setRedirectToLogin] = useState(false);
+
+    async function getTurmas() {
+        try {
+            const { data } = await instance.get('http://localhost:8080/api/turmas')
+            setTurmas(data);
+            console.log(data);
+        } catch (error) {
+            console.log('ERROR: GET TURMAS: ', error)
+        }
+    }
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setUserData({ ...userData, [name]: value });
     };
 
+    const registrarCadastroSucesso = () => { 
+        setCadastroSucesso(true);
+        setRedirectToLogin(true);
+    }
+
     const handleCadastroClick = () => {
-        // Lógica de cadastro simulada
-        setTimeout(() => {
-            setCadastroSucesso(true);
-            setRedirectToLogin(true);
-            setUserData({
-                nome: '',
-                tipoUsuario: '',
-                turma: '',
-                email: '',
-                senha: '',
-            });
-        }, 2500);
+         let api = "";
+
+         switch (userData.tipoUsuario) {
+             case 'aluno':
+                 api = "alunos";
+                 break;
+             case 'professor':
+                 api = "professores";
+                 userData.turmas_ids = []
+                 break;
+             
+         }
+         
+         instance.post('/api/' + api, userData).then((response) => {
+             registrarCadastroSucesso();
+         }).catch((error) => {
+             alert(error);
+         });
+
+        setUserData({
+            nome: '',
+            tipoUsuario: '',
+            turma: '',
+            email: '',
+            senha: '',
+        });
+    
     };
 
     if (redirectToLogin) {
-        window.location.href = '/login';
+        setTimeout(() => {
+            window.location.href = '/login';
+        }, 2500);
     }
+
+    useEffect(() => {
+        getTurmas();
+    }, []);
 
     return (
         <div className='Cadastro-contents'>
@@ -68,9 +112,7 @@ export default function () {
                     onChange={handleInputChange}
                 >
                     <option value="">Selecione a Turma</option>
-                    <option value="Turma A">Turma A</option>
-                    <option value="Turma B">Turma B</option>
-                    <option value="Turma C">Turma C</option>
+                    {formataTurmas(turmas)}
                 </select>
                 <input
                     type="email"
@@ -92,4 +134,10 @@ export default function () {
             </div>
         </div>
     );
+}
+
+function formataTurmas(turmas) {
+    return turmas.map((turma, index) => (
+        <option key={index} value={turma.id}>{turma.serie}</option>
+    ))
 }

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./bibliotecario.css";
 
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CadastroTurmaModal from "../Modal/CadastraTurmaModal";
 
 const instance = axios.create({
