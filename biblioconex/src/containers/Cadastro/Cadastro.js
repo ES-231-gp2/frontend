@@ -33,9 +33,9 @@ export default function () {
         
         if (userData.tipoUsuario == "aluno") {
             
-            instance.post('http://localhost:8080/api/alunos', userData).then((response) => {
+            instance.post(baseUrl + '/api/alunos', userData).then((response) => {
                 setCadastroSucesso(true);
-                setRedirectToLogin(true);
+                setRedirectToLogin(false);
             }).catch((error) => {
                 alert(error);
             });
