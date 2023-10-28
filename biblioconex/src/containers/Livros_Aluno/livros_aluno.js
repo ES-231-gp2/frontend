@@ -1,19 +1,19 @@
-import './livros_aluno.css';
-import Livro_Box from '../../components/Livro_Box/Livro_Box';
-import { useEffect, useState } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import Livro_Box from '../../components/Livro_Box/Livro_Box';
+import './livros_aluno.css';
 
 export default function LivrosAluno() {
     const [livros_aluno, setLivros] = useState({});
 
     useEffect(() => {
         axios.get('https://www.biblioconex.com/livros_aluno?id=123')
-        .then(response => {
-          setLivros(response.data);
-        })
-        .catch(error => {
-          console.log(error);
-        });
+            .then(response => {
+                setLivros(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }, []);
 
     return (
@@ -31,7 +31,7 @@ export default function LivrosAluno() {
                     showResenhaButton={true}
                     botao2='Resenha'
                 />
-                ))
+            ))
             }
         </div>
     );

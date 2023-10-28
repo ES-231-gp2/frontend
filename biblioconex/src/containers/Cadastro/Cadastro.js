@@ -10,7 +10,7 @@ export default function () {
         senha: '',
     });
 
-    const [cadastroSucesso, setCadastroSucesso] = useState(false); 
+    const [cadastroSucesso, setCadastroSucesso] = useState(false);
     const [redirectToLogin, setRedirectToLogin] = useState(false);
 
     const handleInputChange = (e) => {
@@ -89,7 +89,6 @@ export default function () {
                 <div className='botao-cadastro' onClick={handleCadastroClick}>
                     Cadastrar
                 </div>
-                
             </div>
         </div>
     );
