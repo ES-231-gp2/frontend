@@ -35,7 +35,7 @@ export default function () {
             
             instance.post(baseUrl + '/api/alunos', userData).then((response) => {
                 setCadastroSucesso(true);
-                setRedirectToLogin(false);
+                setRedirectToLogin(true);
             }).catch((error) => {
                 alert(error);
             });
