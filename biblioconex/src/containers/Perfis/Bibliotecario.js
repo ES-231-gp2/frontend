@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import "./bibliotecario.css";
+import config from "../../config.js"
 
 import axios from "axios";
 import { useState } from "react";
 import CadastroTurmaModal from "../Modal/CadastraTurmaModal";
 
+const baseUrl = config.baseUrl;
+
 const instance = axios.create({
-  baseURL: "http://localhost:8080",
+  baseURL: baseUrl,
 });
 
 function Bibliotecario() {
@@ -87,7 +90,7 @@ function Bibliotecario() {
 
 function alterarLivroDoMes(id) {
   instance
-    .put("http://localhost:8080/api/livros/livro-do-mes/" + id)
+    .put("/api/livros/livro-do-mes/" + id)
     .then((response) => {
       console.log(response);
     })

@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
 import './Cadastro.css';
+import config from "../../config.js"
+
+import axios from "axios";
+import { json } from 'react-router-dom';
+
+const baseUrl = config.baseUrl;
+
+const instance = axios.create({
+  baseURL: baseUrl,
+});
 
 export default function () {
     const [userData, setUserData] = useState({
@@ -18,23 +28,33 @@ export default function () {
         setUserData({ ...userData, [name]: value });
     };
 
-    const handleCadastroClick = () => {
+    function handleCadastroClick() {
         // Lógica de cadastro simulada
-        setTimeout(() => {
-            setCadastroSucesso(true);
-            setRedirectToLogin(true);
-            setUserData({
-                nome: '',
-                tipoUsuario: '',
-                turma: '',
-                email: '',
-                senha: '',
+        
+        if (userData.tipoUsuario == "aluno") {
+            
+            instance.post('http://localhost:8080/api/alunos', userData).then((response) => {
+                setCadastroSucesso(true);
+                setRedirectToLogin(true);
+            }).catch((error) => {
+                alert(error);
             });
-        }, 2500);
+        }
+        
+        setUserData({
+            nome: '',
+            tipoUsuario: '',
+            turma: '',
+            email: '',
+            senha: '',
+        });
+
     };
 
     if (redirectToLogin) {
+        setTimeout(() => {
         window.location.href = '/login';
+        }, 2500);
     }
 
     return (
@@ -68,9 +88,7 @@ export default function () {
                     onChange={handleInputChange}
                 >
                     <option value="">Selecione a Turma</option>
-                    <option value="Turma A">Turma A</option>
-                    <option value="Turma B">Turma B</option>
-                    <option value="Turma C">Turma C</option>
+                    <option value="1">1</option>
                 </select>
                 <input
                     type="email"
