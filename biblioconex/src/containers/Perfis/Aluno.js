@@ -2,9 +2,15 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./aluno.css";
 
+const instance = axios.create({
+  baseURL: process.env.REACT_APP_ENV
+})
+
 function Aluno() {
 
     const [historico_request, setHistorico] = useState({});
+    const [resenha_request, setResenha] = useState({});
+    const [textoTurma, setTextoTurma] = useState({});
     const [isEditing, setEditing] = useState(false);
     const [name, setName] = useState('Fulano da Silva');
     const [classInfo, setClassInfo] = useState('7° ano B');
@@ -21,13 +27,9 @@ function Aluno() {
     };
 
     useEffect(() => {
-        axios.get('https://www.biblioconex.com/historico_aluno?id=123')
-        .then(response => {
-          setHistorico(response.data);
-        })
-        .catch(error => {
-          console.log(error);
-        });
+      getTextoTurma(setTextoTurma);
+      getHistorico(setHistorico);
+      getResenha(setResenha);
     }, []);
 
     return (
@@ -57,32 +59,11 @@ function Aluno() {
             
                 
             <h2 className='titulo-secao-aluno'>TEXTO DA TURMA</h2>
-            <div className='Contents-perfis'>
-                <div class='info-livro'>
-                    <h4>Título </h4>
-                    <p>resumo do texto e onde tá </p>
-                    <p>disponível </p>
-                </div>
-            </div>
+            {formataTextoTurma(textoTurma)}
 
             <h2 className='titulo-secao-aluno'>HISTÓRICO</h2>
-            <div className='Contents-perfis'>
-                {Object.values(historico_request).map((historico_item) => (
-                    <div class='info-livro'>
-                        <h4 >{historico_item.titulo}</h4>
-                        <p >Data da reserva: {historico_item.dataReserva}</p>
-                        <p >Data da entrega: {historico_item.dataEntrega}</p>
-                        <p >Status: {historico_item.status}</p>
-                    </div>
-                ))
-                }
-
-                <div className='Linha-inferior'>
-                    <p>1 2 3 4 5 ...</p><img className='Botao-seta' src='seta.svg'></img>
-                </div>
-
-                    {/* falta o sistema de páginas */}
-            </div>
+            {formataHistorico(historico_request)}
+            
 
             <h2 className='titulo-secao-aluno'>FILA DE ESPERA</h2>
             <div className='Contents-perfis'>
@@ -99,21 +80,88 @@ function Aluno() {
             </div>
                 
             <h2 className='titulo-secao-aluno'>RESENHAS</h2>
-            <div className='Contents-perfis'>
-                <div class='info-livro'>
-                    <h4 >Título 1</h4>
-                    <p >"comentário escrito pelo aluno do que achou/aprendeu/refletiu sobre a obra"</p>
-                </div>
-
-                <div className='Linha-inferior'>
-                    <p>1 2 3 4 5 ...</p><img className='Botao-seta' src='seta.svg'></img>
-                </div>
-                {/* falta o sistema de páginas */}
-            </div>
+            {formataResenhas(resenha_request)}
 
             
         </div>
     );
+}
+
+function formataHistorico(historico_request) {
+  return (
+    <div className='Contents-perfis'>           
+      {Object.values(historico_request).map((historico_item) => (
+      <div class='info-livro'>
+          <h4 >{historico_item.titulo}</h4>
+          <p >Data da reserva: {historico_item.dataReserva}</p>
+          <p >Data da entrega: {historico_item.dataEntrega}</p>
+          <p >Status: {historico_item.status}</p>
+      </div>
+      ))}
+      <div className='Linha-inferior'>
+        <p>1 2 3 4 5 ...</p><img className='Botao-seta' src='seta.svg'></img>
+      </div>
+  </div>
+  );
+  
+
+}
+
+function formataResenhas(resenha_request) {
+  
+  return (
+    <div className='Contents-perfis'>  
+      {Object.values(resenha_request).map((resenha_item) => (
+      
+        <div class='info-livro'>
+            <h4 >{resenha_item.livro.titulo}</h4>
+            <p >{resenha_item.conteudo}</p>
+        </div>
+
+      ))}
+      <div className='Linha-inferior'>
+        <p>1 2 3 4 5 ...</p><img className='Botao-seta' src='seta.svg'></img>
+      </div>
+  </div>
+  )
+}
+
+function formataTextoTurma(textoTurma) {
+  return (
+    <div className='Contents-perfis'>
+      <div class='info-livro'>
+          <h4>{textoTurma != undefined && textoTurma.nome}</h4>
+          <p>{textoTurma != undefined && textoTurma.resumo}</p>
+          <p>{textoTurma != undefined && "disponível"} </p> {/*"Arruamr isso aqui"*/}
+      </div>
+  </div>
+
+  )
+}
+
+function getHistorico(setHistorico) {
+  instance.get("./exemplares/historico/" + localStorage.getItem("idUsuario")).then((response) => {
+      setHistorico(response.data);
+  }).catch((error) => {
+      console.log("ERRO GET HISTORICO: ", error);
+  });
+}
+
+function getResenha(setResenha) {
+  instance.get("./resenhas/aluno/" + localStorage.getItem("idUsuario")).then((response) => {
+      setResenha(response.data);
+  }).catch((error) => {
+      console.log("ERRO GET RESENHAS: ", error);
+  });
+}
+
+function getTextoTurma(setTextoTurma) {
+  instance.get("./turmas/" + localStorage.getItem("idUsuario") + "/alunos").then((response) => {
+      setTextoTurma(response.data.texto);
+      console.log(response.data.texto);
+  }).catch((error) => {
+      console.log("ERRO GET TEXTO TURMA: ", error);
+  });
 }
 
 export default Aluno;
