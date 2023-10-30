@@ -42,6 +42,7 @@ function handleLogin(setError, navigate) {
 
     instance.get(`/login?login=${email.replace("@", "%40")}&senha=${senha}`).then((response) => {
         localStorage.setItem("user", JSON.stringify(response.data));
+        localStorage.setItem("idUsuario", response.data.id);
 
         if (response.data.tipo_usuario === "BIBLIOTECARIO") {
             navigate('/bibliotecario');
