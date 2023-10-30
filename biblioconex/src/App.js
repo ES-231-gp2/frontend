@@ -22,7 +22,7 @@ import AlunoByBibliotecario from './containers/Perfis/AlunoBybibliotecario';
 
 function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const [user, setUser] = useState(localStorage.getItem('user'));
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);

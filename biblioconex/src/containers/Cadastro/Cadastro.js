@@ -22,7 +22,7 @@ export default function () {
 
     async function getTurmas() {
         try {
-            const { data } = await instance.get('http://localhost:8080/api/turmas')
+            const { data } = await instance.get('http://34.125.199.225:8081/api/turmas')
             setTurmas(data);
             console.log(data);
         } catch (error) {
@@ -55,8 +55,15 @@ export default function () {
              
          }
          
-         instance.post('/api/' + api, userData).then((response) => {
-             registrarCadastroSucesso();
+         instance.post(api, userData).then((response) => {
+            const user = localStorage.getItem("user");
+            console.log(user);
+            instance.post("/login/cadastrar?loginBibliotecario=" + user.email + "&senhaBibliotecario=" + user.senha).then((response) => {
+
+                registrarCadastroSucesso();
+            }).catch((error) => {
+                console.log(error);
+            });
          }).catch((error) => {
              alert(error);
          });

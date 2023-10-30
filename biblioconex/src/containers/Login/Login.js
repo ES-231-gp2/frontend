@@ -40,8 +40,8 @@ function handleLogin(setError, navigate) {
     const email = document.getElementById("login").value;
     const senha = document.getElementById("senha").value;
 
-    instance.get(`/login?login=${email}&senha=${senha}`).then((response) => {
-        localStorage.setItem("user", response.data);
+    instance.get(`/login?login=${email.replace("@", "%40")}&senha=${senha}`).then((response) => {
+        localStorage.setItem("user", JSON.stringify(response.data));
 
         if (response.data.tipo_usuario === "BIBLIOTECARIO") {
             navigate('/bibliotecario');
