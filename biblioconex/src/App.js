@@ -22,6 +22,7 @@ import AlunoByBibliotecario from './containers/Perfis/AlunoBybibliotecario';
 
 function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -47,6 +48,11 @@ function App() {
     });
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setUser(null);
+  };
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -56,9 +62,15 @@ function App() {
           </Link>
           <div className="Header-inputs">
             <div className="App-header-entrar">
-              <Link to="/login" className="Custom-link-button">
-                Entrar
-              </Link>
+              {user ? (
+                <Link to="/" onClick={handleLogout} className="Custom-link-button">
+                  Sair
+                </Link>
+              ) : (
+                <Link to="/login" className="Custom-link-button">
+                  Entrar
+                </Link>
+              )}
             </div>
             <input placeholder="Pesquisar por..." className="App-header-barraDePesquisa" />
             <img src={lupa} className="App-header-lupa" alt="Lupa" />
@@ -89,7 +101,7 @@ function App() {
         </div>
 
         {showScrollButton && (
-          <button class="scrollToTopButton" onClick={scrollToTop}><img src="ScrollTop.svg"/></button>
+          <button class="scrollToTopButton" onClick={scrollToTop}><img src="ScrollTop.svg" /></button>
         )}
 
       </BrowserRouter>
