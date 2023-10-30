@@ -8,24 +8,8 @@ const instance = axios.create({
 });
 
 function Login() {
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
     const [error, setError] = useState(null);
     const navigate = useNavigate();
-
-    const handleLogin = async () => {
-        try {
-            const user = await instance.get(`/login?login=${email}&senha=${senha}`);
-            localStorage.setItem("user", JSON.stringify(user));
-            if (user.tipo_usuario === "BIBLIOTECARIO") {
-                navigate('/bibliotecario');
-            } else {
-                navigate('/catalogo');
-            }
-        } catch (error) {
-            setError("Credenciais inválidas. Tente novamente.")
-        }
-    };
 
     return (
         <div className='Login-contents'>
@@ -33,17 +17,15 @@ function Login() {
             <div className='Form-contents'>
                 <input
                     placeholder='E-mail'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    id="login"
                 />
                 <input
                     type='password'
                     placeholder='Senha'
-                    value={senha}
-                    onChange={(e) => setSenha(e.target.value)}
+                    id="senha"
                 />
-                <div className='botao-login'>
-                    <button onClick={handleLogin} className='Custom-link-button'>
+                <div className='botao-login' onClick={() => {handleLogin(setError, navigate)}}>
+                    <button className='Custom-link-button'>
                         Entrar
                     </button>
                 </div>
@@ -52,5 +34,25 @@ function Login() {
         </div>
     );
 }
+
+function handleLogin(setError, navigate) {
+    console.log("efetuando login...");
+    const email = document.getElementById("login").value;
+    const senha = document.getElementById("senha").value;
+
+    instance.get(`/login?login=${email}&senha=${senha}`).then((response) => {
+        localStorage.setItem("user", response.data);
+
+        if (response.data.tipo_usuario === "BIBLIOTECARIO") {
+            navigate('/bibliotecario');
+        } else {
+            navigate('/catalogo');
+        }
+    }).catch((error) => {
+        console.log(error);
+        setError("Credenciais inválidas. Tente novamente.")
+    })    
+    
+};
 
 export default Login;

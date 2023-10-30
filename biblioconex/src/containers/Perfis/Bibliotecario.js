@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import CadastroTurmaModal from "../Modal/CadastraTurmaModal";
 
 const instance = axios.create({
-  baseURL: "http://localhost:8080",
+  baseURL: process.env.REACT_APP_ENV,
 });
 
 function Bibliotecario() {
@@ -96,7 +96,7 @@ function Bibliotecario() {
 
 function alterarLivroDoMes(id) {
   instance
-    .put("http://localhost:8080/api/livros/livro-do-mes/" + id)
+    .put("/livros/livro-do-mes/" + id)
     .then((response) => {
       console.log(response);
     })
@@ -109,7 +109,7 @@ function cadastrarLivro(ISBN, num_exemplares) {
   let livro;
 
   instance
-    .get("/api/livros/isbn/" + ISBN)
+    .get("/livros/isbn/" + ISBN)
     .then(function (response) {
       livro = response.data;
       // Boa parte dos livros não estão vindo com edição
@@ -122,9 +122,9 @@ function cadastrarLivro(ISBN, num_exemplares) {
     })
     .then(function () {
       instance
-        .post("/api/livros", livro, {
+        .post("/livros", livro, {
           params: {
-            numeroExemplares: 1,
+            numeroExemplares: num_exemplares,
           },
         })
         .then(function (response) {
